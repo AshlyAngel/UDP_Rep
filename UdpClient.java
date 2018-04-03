@@ -20,6 +20,8 @@ class UdpClient
             clientSocket.receive(receivePacket);
             String modifiedSentence = new String(receivePacket.getData(),0,receivePacket.getLength());
             System.out.println("FROM SERVER:" + modifiedSentence);
+            if(sentence.equals("bye"))
+        	flag=false;
        }
    }
 }
