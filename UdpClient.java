@@ -12,6 +12,10 @@ class UdpClient
       boolean flag=true;
       while(flag)
        {
+            String sentence = inFromUser.readLine();
+            sendData = sentence.getBytes();
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 4444);
+            clientSocket.send(sendPacket);
        }
    }
 }
