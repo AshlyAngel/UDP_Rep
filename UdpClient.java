@@ -23,5 +23,6 @@ class UdpClient
             if(sentence.equals("bye"))
         	flag=false;
        }
+       clientSocket.close();
    }
 }
