@@ -16,6 +16,10 @@ class UdpClient
             sendData = sentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 4444);
             clientSocket.send(sendPacket);
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            clientSocket.receive(receivePacket);
+            String modifiedSentence = new String(receivePacket.getData(),0,receivePacket.getLength());
+            System.out.println("FROM SERVER:" + modifiedSentence);
        }
    }
 }
